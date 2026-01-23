@@ -185,6 +185,8 @@ export function GroupedTransactionList() {
     <div>
       <h2>Grouped Transactions</h2>
       {/* TODO: Map over categories and render each group */}
+      {/* Hint: Use Object.entries(grouped) to iterate: */}
+      {/* Object.entries(grouped).map(([category, items]) => ...) */}
       {/* Remember: both outer and inner lists need keys! */}
     </div>
   )

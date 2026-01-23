@@ -1,7 +1,12 @@
 /**
- * Session 3.1 - useState Hook
+ * ✏️  SESSION 3.1 - useState Hook
  *
- * Exercise: Managing component state
+ * 📝 What you'll learn:
+ * - Managing component state
+ * - Controlled components
+ * - Updating objects and arrays in state
+ *
+ * 🎯 Exercises: 10
  */
 
 import { useState } from 'react'

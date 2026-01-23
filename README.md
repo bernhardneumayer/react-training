@@ -35,21 +35,25 @@ The app will be available at http://localhost:5173
 ```
 react-training/
 ├── src/
-│   ├── App.tsx                    # Main live coding area (reset each session)
-│   ├── exercises/                 # Exercise files with TODOs
-│   │   ├── Session2-JSX.tsx       # JSX fundamentals
-│   │   ├── Session2-Props.tsx     # Props and TypeScript
-│   │   ├── Session2-Lists.tsx     # Lists and keys
-│   │   ├── Session2-Events.tsx    # Event handling
-│   │   ├── Session3-State.tsx     # useState hook
-│   │   ├── Session3-Effects.tsx   # useEffect hook
-│   │   └── Session3-Refs.tsx      # useRef hook
-│   └── solutions/                 # Reference implementations
+│   ├── App.tsx                         # Live coding area with current session
+│   ├── exercises/                      # Exercise files (numbered for order)
+│   │   ├── 01-Session2-JSX.tsx         # Session 2.1: JSX fundamentals
+│   │   ├── 02-Session2-Props.tsx       # Session 2.2: Props and TypeScript
+│   │   ├── 03-Session2-Lists.tsx       # Session 2.4: Lists and keys
+│   │   ├── 04-Session2-Events.tsx      # Session 2.5: Event handling
+│   │   ├── 05-Session3-State.tsx       # Session 3.1: useState hook
+│   │   ├── 06-Session3-Effects.tsx     # Session 3.2: useEffect hook
+│   │   └── 07-Session3-Refs.tsx        # Session 3.3: useRef hook
+│   └── solutions/                      # Reference implementations
 │       ├── Session2-Props-Solutions.tsx
 │       └── Session3-State-Solutions.tsx
-├── package.json
+├── SETUP.md                            # Installation guide
+├── WORKFLOW.md                         # How to use exercises
+├── EXERCISE_TEMPLATE.md                # Template for new exercises
 └── README.md
 ```
+
+💡 **Tip**: Files are numbered `01-`, `02-`, etc. so they appear in the correct order in your editor!
 
 ## 📖 Training Sessions
 
@@ -82,13 +86,13 @@ react-training/
 Example live coding setup:
 ```tsx
 // src/App.tsx
-import { Counter } from './exercises/Session3-State'
+import { Counter } from './exercises/05-Session3-State'
 import { UserCard } from './solutions/Session2-Props-Solutions'
 
 function App() {
   return (
     <div style={{ padding: '2rem' }}>
-      <h1>Session 3.1 - useState</h1>
+      <h1>📚 Session 3.1 - useState</h1>
 
       {/* Live code here */}
       <Counter />
@@ -102,28 +106,42 @@ function App() {
 
 ### For Participants (Hands-on Practice)
 
-1. **Clone the repository**
+**📖 Documentation:**
+- 🚀 [QUICK_START.md](./QUICK_START.md) - Fast session switching reference
+- 📖 [WORKFLOW.md](./WORKFLOW.md) - Detailed step-by-step workflow
+- ⚙️  [SETUP.md](./SETUP.md) - Installation & troubleshooting
+
+**Quick workflow:**
+
+1. **Clone and setup**
    ```bash
-   git clone <repository-url>
+   git clone git@github.com:bernhardneumayer/react-training.git
    cd react-training
    npm install
    npm run dev
    ```
 
-2. **Work on exercises**
-   - Open exercise files in `src/exercises/`
-   - Look for `TODO` comments
-   - Implement the missing functionality
-   - Import and render in `App.tsx` to test
+2. **Work on exercises** (Recommended approach)
+   - Edit exercise files in `src/exercises/` (numbered `01-`, `02-`, etc.)
+   - Find `TODO` comments and implement
+   - Each component has a placeholder UI showing status (🚧 Not started, ✏️ In progress, ✅ Complete)
+   - Import into `App.tsx` to test:
+     ```tsx
+     import { Counter } from './exercises/05-Session3-State'
+
+     function App() {
+       return <Counter />  // See your work in browser!
+     }
+     ```
 
 3. **Check solutions**
-   - Compare your implementation with `src/solutions/`
+   - Compare with `src/solutions/` after trying yourself
    - Understand different approaches
 
 4. **Experiment freely**
-   - Modify `App.tsx` as much as you want
-   - Hot reload will update instantly
-   - Console in DevTools for debugging
+   - `App.tsx` is your playground
+   - Hot reload updates instantly
+   - Use browser DevTools for debugging
 
 ## 💡 Tips for Learning
 

@@ -51,7 +51,7 @@ function App() {
 - Unclosed tags
 - Trying to use `if` statements instead of ternary
 
-**Exercise to assign:** `src/exercises/Session2-JSX.tsx`
+**Exercise to assign:** `src/exercises/01-Session2-JSX.tsx`
 
 ---
 
@@ -99,7 +99,7 @@ function App() {
 - Destructuring makes code cleaner
 - Functions can be passed as props
 
-**Exercise to assign:** `src/exercises/Session2-Props.tsx`
+**Exercise to assign:** `src/exercises/02-Session2-Props.tsx`
 
 ---
 
@@ -168,7 +168,7 @@ function App() {
 2. Index as key (explain why it's problematic)
 3. Non-unique key (show what happens)
 
-**Exercise to assign:** `src/exercises/Session2-Lists.tsx`
+**Exercise to assign:** `src/exercises/03-Session2-Lists.tsx`
 
 ---
 
@@ -203,7 +203,7 @@ function App() {
 }
 ```
 
-**Exercise to assign:** `src/exercises/Session2-Events.tsx`
+**Exercise to assign:** `src/exercises/04-Session2-Events.tsx`
 
 ---
 
@@ -266,7 +266,7 @@ function NameInput() {
 - Don't mutate state directly
 - Functional updates when using previous state
 
-**Exercise to assign:** `src/exercises/Session3-State.tsx`
+**Exercise to assign:** `src/exercises/05-Session3-State.tsx`
 
 ---
 
@@ -311,7 +311,7 @@ useEffect(() => {
 - Objects/arrays in deps (infinite loop)
 - Forgetting cleanup for subscriptions
 
-**Exercise to assign:** `src/exercises/Session3-Effects.tsx`
+**Exercise to assign:** `src/exercises/06-Session3-Effects.tsx`
 
 ---
 
@@ -362,7 +362,7 @@ function Timer() {
 - Changing ref.current does NOT trigger re-render
 - Use for DOM access and mutable values
 
-**Exercise to assign:** `src/exercises/Session3-Refs.tsx`
+**Exercise to assign:** `src/exercises/07-Session3-Refs.tsx`
 
 ---
 
