@@ -2,9 +2,23 @@
 
 Welcome to the React Training interactive learning environment! This project is designed to help backend engineers learn React through hands-on exercises and live coding sessions.
 
+## ⚙️ Prerequisites
+
+**Don't have Node.js/npm installed?** → See [SETUP.md](./SETUP.md) for detailed installation instructions.
+
+**Quick check:**
+```bash
+node --version  # Should be v18+ (v20+ recommended)
+npm --version   # Should be v9+
+```
+
 ## 🚀 Quick Start
 
 ```bash
+# Clone the repository
+git clone git@github.com:bernhardneumayer/react-training.git
+cd react-training
+
 # Install dependencies
 npm install
 
@@ -13,6 +27,8 @@ npm run dev
 ```
 
 The app will be available at http://localhost:5173
+
+**Stuck?** Check [SETUP.md](./SETUP.md) for troubleshooting.
 
 ## 📚 Project Structure
 
@@ -110,12 +126,6 @@ function App() {
    - Console in DevTools for debugging
 
 ## 💡 Tips for Learning
-
-### Keyboard Shortcuts (VS Code)
-- `Ctrl/Cmd + Space` - Autocomplete
-- `Ctrl/Cmd + Click` - Go to definition
-- `F2` - Rename symbol
-- `Ctrl/Cmd + /` - Toggle comment
 
 ### Browser DevTools
 - **React DevTools Extension**: Install for Chrome/Firefox
