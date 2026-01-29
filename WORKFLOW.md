@@ -30,13 +30,13 @@ This is the best approach for keeping your work organized:
 
 **Step 1: Open an exercise file**
 ```bash
-# Open in VS Code
-code src/exercises/Session3-State.tsx
+# Open in IntelliJ IDEA
+code src/exercises/Session2-State.tsx
 ```
 
 **Step 2: Find the exercise and implement it**
 ```tsx
-// In Session3-State.tsx
+// In Session2-State.tsx
 export function Counter() {
   // TODO: Add state for count
   const [count, setCount] = useState(0)  // ← Implement here
@@ -53,7 +53,7 @@ export function Counter() {
 **Step 3: Import to App.tsx**
 ```tsx
 // In src/App.tsx
-import { Counter } from './exercises/05-Session3-State'
+import { Counter } from './exercises/05-Session2-State'
 
 function App() {
   return (
@@ -78,9 +78,9 @@ function App() {
 Example of working through multiple exercises:
 ```tsx
 // src/App.tsx
-import { Counter } from './exercises/05-Session3-State'
-import { NameInput } from './exercises/05-Session3-State'
-import { TodoList } from './exercises/05-Session3-State'
+import { Counter } from './exercises/05-Session2-State'
+import { NameInput } from './exercises/05-Session2-State'
+import { TodoList } from './exercises/05-Session2-State'
 
 function App() {
   return (
@@ -154,7 +154,7 @@ function App() {
 
 4. **Then import exercises to show solutions**:
 ```tsx
-import { Counter } from './solutions/05-Session3-State-Solutions'
+import { Counter } from './solutions/05-Session2-State-Solutions'
 
 function App() {
   return (
@@ -174,7 +174,7 @@ function App() {
 
 ```tsx
 // App.tsx - Clean and focused
-import { CurrentExercise } from './exercises/05-Session3-State'
+import { CurrentExercise } from './exercises/05-Session2-State'
 
 function App() {
   return (
@@ -194,8 +194,8 @@ function App() {
 
 ```tsx
 // App.tsx - Compare different approaches
-import { Counter } from './exercises/05-Session3-State'
-import { FastCounter } from './exercises/05-Session3-State'
+import { Counter } from './exercises/05-Session2-State'
+import { FastCounter } from './exercises/05-Session2-State'
 
 function App() {
   return (
@@ -249,7 +249,7 @@ src/
 ├── exercises/
 │   ├── 01-Session2-JSX.tsx        # Your implementations (keep these!)
 │   ├── 02-Session2-Props.tsx      # ✓ Completed
-│   └── 05-Session3-State.tsx      # 🚧 Working on this
+│   └── 05-Session2-State.tsx      # 🚧 Working on this
 └── solutions/
     └── ...                        # Reference only
 ```
@@ -260,7 +260,7 @@ If you want to save your progress:
 
 ```bash
 # After completing exercises
-git add src/exercises/05-Session3-State.tsx
+git add src/exercises/05-Session2-State.tsx
 git commit -m "Complete useState exercises"
 
 # Create a branch for experiments
@@ -270,7 +270,7 @@ git checkout -b my-experiments
 
 ---
 
-## VS Code Tips for Workflow
+## IntelliJ IDEA Tips for Workflow
 
 ### Split View for Efficiency
 
@@ -286,23 +286,28 @@ git checkout -b my-experiments
 ```
 
 **How to split:**
-- Drag tab to side of editor
-- Or: Right-click tab → "Split Right"
+- Right-click on tab → Split Right (or Split Down)
+- Or drag tab to right/bottom edge of editor window
+- Keyboard: No default shortcut (can configure in Keymap)
 
 ### Quick File Navigation
 
 ```bash
-Cmd/Ctrl + P          # Quick open file
-Cmd/Ctrl + Tab        # Switch between recent files
-Cmd/Ctrl + B          # Toggle sidebar
+Double Shift              # Search Everywhere (files, classes, symbols)
+⌘O / Ctrl+N              # Go to Class
+⌘⇧O / Ctrl+Shift+N       # Go to File
+⌘E / Ctrl+E              # Recent Files
+⌘B / Ctrl+B              # Go to Definition
+⌘⇧T / Ctrl+Shift+T       # Go to Test
 ```
 
 ### Multi-Cursor Editing
 
 ```bash
-Option/Alt + Click    # Add cursor
-Cmd/Ctrl + D          # Select next occurrence
-Cmd/Ctrl + Shift + L  # Select all occurrences
+⌥⇧Click / Alt+Shift+Click      # Add cursor at position
+⌥⌥ + Drag / Ctrl+Ctrl + Drag   # Column selection mode
+⌃G / Alt+J                      # Add selection for next occurrence
+⌘⌃G / Ctrl+Alt+Shift+J          # Select all occurrences
 ```
 
 ---
@@ -314,7 +319,7 @@ Cmd/Ctrl + Shift + L  # Select all occurrences
 **Check:**
 1. Is the exercise imported in App.tsx?
    ```tsx
-   import { MyExercise } from './exercises/05-Session3-State'  // ✓
+   import { MyExercise } from './exercises/05-Session2-State'  // ✓
    ```
 
 2. Is it rendered in the return statement?

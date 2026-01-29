@@ -2,18 +2,18 @@
 
 Quick reference for all exercises organized by topic and difficulty.
 
-## Session 2 - React Basics
+## Session 1 - React Basics
 
-### 2.1 JSX Fundamentals
-📁 `src/exercises/Session2-JSX.tsx`
+### 1.1 JSX Fundamentals
+📁 `src/exercises/01-Session1-JSX.tsx`
 
 - **Exercise 1**: Fix JSX syntax errors ⭐ (Easy)
 - **Exercise 2**: Create WelcomeCard with conditional greeting ⭐⭐ (Medium)
 - **Exercise 3**: Convert statements to expressions ⭐⭐ (Medium)
 - **Exercise 4**: Display user profile with interpolation ⭐⭐ (Medium)
 
-### 2.2 Props and TypeScript
-📁 `src/exercises/Session2-Props.tsx`
+### 1.2 Props and TypeScript
+📁 `src/exercises/02-Session1-Props.tsx`
 
 - **Exercise 1**: Button component with variant prop ⭐ (Easy)
 - **Exercise 2**: UserCard with destructured props ⭐⭐ (Medium)
@@ -21,11 +21,11 @@ Quick reference for all exercises organized by topic and difficulty.
 - **Exercise 4**: Card component with children ⭐⭐ (Medium)
 - **Exercise 5**: Input with rest props pattern ⭐⭐⭐ (Advanced)
 
-### 2.3 Conditional Rendering
-*Covered inline during Session 2.2-2.4*
+### 1.3 Conditional Rendering
+*Covered inline during Session 1.2-1.4*
 
-### 2.4 Lists and Keys
-📁 `src/exercises/Session2-Lists.tsx`
+### 1.4 Lists and Keys
+📁 `src/exercises/03-Session1-Lists.tsx`
 
 - **Exercise 1**: Basic transaction list ⭐ (Easy)
 - **Exercise 2**: Extract TransactionItem component ⭐⭐ (Medium)
@@ -35,8 +35,8 @@ Quick reference for all exercises organized by topic and difficulty.
 - **Exercise 6**: Fix key mistakes ⭐ (Easy)
 - **Exercise 7**: Nested lists (grouped transactions) ⭐⭐⭐ (Advanced)
 
-### 2.5 Event Handling
-📁 `src/exercises/Session2-Events.tsx`
+### 1.5 Event Handling
+📁 `src/exercises/04-Session1-Events.tsx`
 
 - **Exercise 1**: Basic click handler ⭐ (Easy)
 - **Exercise 2**: Controlled input with onChange ⭐ (Easy)
@@ -50,10 +50,10 @@ Quick reference for all exercises organized by topic and difficulty.
 
 ---
 
-## Session 3 - React Hooks
+## Session 2 - React Hooks
 
-### 3.1 useState Hook
-📁 `src/exercises/Session3-State.tsx`
+### 2.1 useState Hook
+📁 `src/exercises/05-Session2-State.tsx`
 
 - **Exercise 1**: Simple counter ⭐ (Easy)
 - **Exercise 2**: Controlled text input ⭐ (Easy)
@@ -66,8 +66,8 @@ Quick reference for all exercises organized by topic and difficulty.
 - **Exercise 9**: Lazy initialization ⭐⭐ (Medium)
 - **Exercise 10**: Shopping cart (comprehensive) ⭐⭐⭐⭐ (Expert)
 
-### 3.2 useEffect Hook
-📁 `src/exercises/Session3-Effects.tsx`
+### 2.2 useEffect Hook
+📁 `src/exercises/06-Session2-Effects.tsx`
 
 - **Exercise 1**: Mount/unmount logger ⭐ (Easy)
 - **Exercise 2**: Document title sync ⭐⭐ (Medium)
@@ -80,8 +80,8 @@ Quick reference for all exercises organized by topic and difficulty.
 - **Exercise 9**: When NOT to use useEffect ⭐⭐ (Medium)
 - **Exercise 10**: Chat room subscription ⭐⭐⭐⭐ (Expert)
 
-### 3.3 useRef Hook
-📁 `src/exercises/Session3-Refs.tsx`
+### 2.3 useRef Hook
+📁 `src/exercises/07-Session2-Refs.tsx`
 
 - **Exercise 1**: Auto-focus input on mount ⭐ (Easy)
 - **Exercise 2**: Manual focus control ⭐ (Easy)
@@ -129,48 +129,6 @@ Quick reference for all exercises organized by topic and difficulty.
 - Good for confidence building
 
 ---
-
-## Mini-Projects (After completing exercises)
-
-Once you've finished the exercises, try building these from scratch:
-
-### After Session 2
-1. **Contact Card Gallery** ⭐⭐
-   - Display list of contacts
-   - Each card shows name, email, phone
-   - Click to select (highlight selected)
-   - Filter by name
-
-2. **Product Catalog** ⭐⭐⭐
-   - Grid of products with image, name, price
-   - Filter by category
-   - Sort by price/name
-   - "Add to cart" button (just console.log for now)
-
-### After Session 3
-3. **Todo App with Persistence** ⭐⭐⭐
-   - Add/remove todos
-   - Mark as complete
-   - Filter: All/Active/Completed
-   - Save to localStorage
-   - Load on mount
-
-4. **Weather Dashboard** ⭐⭐⭐⭐
-   - Fetch weather from API
-   - Show loading/error states
-   - Search by city
-   - Display current + forecast
-   - Auto-refresh every 5 minutes
-
-5. **Countdown Timer** ⭐⭐⭐
-   - Input minutes and seconds
-   - Start/pause/reset buttons
-   - Visual progress bar
-   - Alert when time is up
-   - Persistent state (survives refresh)
-
----
-
 ## Solutions
 
 All solutions are in `src/solutions/`:
@@ -211,7 +169,7 @@ Don't suffer in silence - ask for help! 🙋
 
 Track your progress by checking off completed exercises:
 
-### Session 2
+### Session 1
 - [ ] JSX Exercise 1
 - [ ] JSX Exercise 2
 - [ ] JSX Exercise 3
@@ -224,17 +182,11 @@ Track your progress by checking off completed exercises:
 - [ ] Lists Exercise 1-7
 - [ ] Events Exercise 1-9
 
-### Session 3
+### Session 2
 - [ ] State Exercise 1-10
 - [ ] Effects Exercise 1-10
 - [ ] Refs Exercise 1-11
 
-### Bonus
-- [ ] Mini-project 1
-- [ ] Mini-project 2
-- [ ] Mini-project 3
-- [ ] Mini-project 4
-- [ ] Mini-project 5
 
 🎉 **Completion Goal**: 80%+ of exercises before moving to Cousteau
 

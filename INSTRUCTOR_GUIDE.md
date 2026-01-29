@@ -2,31 +2,28 @@
 
 ## Pre-Session Setup Checklist
 
-### Before Session 2
+### Before Session 1
 
 - [ ] Clone this repository to your machine
 - [ ] Run `npm install` and `npm run dev` to verify setup works
 - [ ] Test that hot reload is working (edit App.tsx and save)
 - [ ] Install React DevTools extension in your browser
-- [ ] Increase VS Code font size for screen sharing (18-20px recommended)
-- [ ] Set up dual screen: VS Code on left, Browser on right
-- [ ] Have Cousteau Storybook URL ready for Session 2.6
+- [ ] Increase IntelliJ IDEA font size for screen sharing (18-20px recommended)
+- [ ] Set up dual screen: IntelliJ IDEA on left, Browser on right
+- [ ] Have Cousteau Storybook URL ready for Session 1.6
 
-### VS Code Settings for Live Coding
+### IntelliJ IDEA Settings for Live Coding
 
-```json
-{
-  "editor.fontSize": 18,
-  "editor.lineHeight": 1.6,
-  "terminal.integrated.fontSize": 16,
-  "editor.minimap.enabled": false,
-  "workbench.activityBar.visible": true
-}
-```
+**Recommended settings for screen sharing:**
+- **Font Size**: Settings → Editor → Font → Size: 18-20
+- **Line Height**: Settings → Editor → Font → Line height: 1.6
+- **Presentation Mode**: View → Appearance → Enter Presentation Mode (increases font automatically)
+- **Disable Distractions**: View → Appearance → Distraction Free Mode
+- **Terminal Font**: Settings → Editor → Color Scheme → Console Font → Size: 16
 
 ## Session-by-Session Guide
 
-### Session 2.1 - JSX Fundamentals (15 min)
+### Session 1.1 - JSX Fundamentals (15 min)
 
 **What to demo in App.tsx:**
 
@@ -51,11 +48,11 @@ function App() {
 - Unclosed tags
 - Trying to use `if` statements instead of ternary
 
-**Exercise to assign:** `src/exercises/01-Session2-JSX.tsx`
+**Exercise to assign:** `src/exercises/01-Session1-JSX.tsx`
 
 ---
 
-### Session 2.2 - Props (20 min)
+### Session 1.2 - Props (20 min)
 
 **Live coding flow:**
 
@@ -99,11 +96,11 @@ function App() {
 - Destructuring makes code cleaner
 - Functions can be passed as props
 
-**Exercise to assign:** `src/exercises/02-Session2-Props.tsx`
+**Exercise to assign:** `src/exercises/02-Session1-Props.tsx`
 
 ---
 
-### Session 2.3 - Conditional Rendering (15 min)
+### Session 1.3 - Conditional Rendering (15 min)
 
 **Patterns to demonstrate:**
 
@@ -134,7 +131,7 @@ function App() {
 
 ---
 
-### Session 2.4 - Lists and Keys (20 min)
+### Session 1.4 - Lists and Keys (20 min)
 
 **Live coding with real data:**
 
@@ -168,11 +165,11 @@ function App() {
 2. Index as key (explain why it's problematic)
 3. Non-unique key (show what happens)
 
-**Exercise to assign:** `src/exercises/03-Session2-Lists.tsx`
+**Exercise to assign:** `src/exercises/03-Session1-Lists.tsx`
 
 ---
 
-### Session 2.5 - Event Handling (10 min)
+### Session 1.5 - Event Handling (10 min)
 
 **Quick demos:**
 
@@ -203,7 +200,7 @@ function App() {
 }
 ```
 
-**Exercise to assign:** `src/exercises/04-Session2-Events.tsx`
+**Exercise to assign:** `src/exercises/04-Session1-Events.tsx`
 
 ---
 
@@ -222,7 +219,7 @@ function App() {
 
 ---
 
-### Session 3.1 - useState (25 min)
+### Session 2.1 - useState (25 min)
 
 **Start with counter:**
 
@@ -266,11 +263,11 @@ function NameInput() {
 - Don't mutate state directly
 - Functional updates when using previous state
 
-**Exercise to assign:** `src/exercises/05-Session3-State.tsx`
+**Exercise to assign:** `src/exercises/05-Session2-State.tsx`
 
 ---
 
-### Session 3.2 - useEffect (30 min)
+### Session 2.2 - useEffect (30 min)
 
 **Start simple:**
 
@@ -307,15 +304,15 @@ useEffect(() => {
 ```
 
 **Common mistakes to demonstrate:**
-- Missing dependencies (ESLint will warn)
+- Missing dependencies (React will warn)
 - Objects/arrays in deps (infinite loop)
 - Forgetting cleanup for subscriptions
 
-**Exercise to assign:** `src/exercises/06-Session3-Effects.tsx`
+**Exercise to assign:** `src/exercises/06-Session2-Effects.tsx`
 
 ---
 
-### Session 3.3 - useRef (15 min)
+### Session 2.3 - useRef (15 min)
 
 **Two main uses:**
 
@@ -362,7 +359,7 @@ function Timer() {
 - Changing ref.current does NOT trigger re-render
 - Use for DOM access and mutable values
 
-**Exercise to assign:** `src/exercises/07-Session3-Refs.tsx`
+**Exercise to assign:** `src/exercises/07-Session2-Refs.tsx`
 
 ---
 
@@ -394,7 +391,7 @@ function Timer() {
 ### "My code doesn't work"
 1. Check browser console for errors
 2. Verify imports are correct
-3. Check for TypeScript errors in VS Code
+3. Check for TypeScript errors in IntelliJ IDEA
 4. Use React DevTools to inspect state
 
 ### "I don't see any changes"

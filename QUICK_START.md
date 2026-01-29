@@ -6,7 +6,7 @@
 
 ```tsx
 // At the top of App.tsx
-import { Counter, NameInput, TodoList } from './exercises/05-Session3-State'
+import { Counter, NameInput, TodoList } from './exercises/05-Session2-State'
 ```
 
 ### Step 2: Render exercises to test them
@@ -31,39 +31,39 @@ That's it! Change the import when switching sessions.
 
 Just copy-paste the import you need!
 
-### Session 2.1 - JSX Fundamentals
+### Session 1.1 - JSX Fundamentals
 ```tsx
-import { BrokenComponent, WelcomeCard, ExpressionPractice, UserProfile } from './exercises/01-Session2-JSX'
+import { BrokenComponent, WelcomeCard, ExpressionPractice, UserProfile } from './exercises/01-Session1-JSX'
 ```
 
-### Session 2.2 - Props
+### Session 1.2 - Props
 ```tsx
-import { Button, UserCard, Badge, Card, Input } from './exercises/02-Session2-Props'
+import { Button, UserCard, Badge, Card, Input } from './exercises/02-Session1-Props'
 ```
 
-### Session 2.4 - Lists
+### Session 1.4 - Lists
 ```tsx
-import { TransactionList, FilteredTransactionList, InteractiveTransactionList } from './exercises/03-Session2-Lists'
+import { TransactionList, FilteredTransactionList, InteractiveTransactionList } from './exercises/03-Session1-Lists'
 ```
 
-### Session 2.5 - Events
+### Session 1.5 - Events
 ```tsx
-import { ClickCounter, ControlledInput, LoginForm, KeyboardHandler } from './exercises/04-Session2-Events'
+import { ClickCounter, ControlledInput, LoginForm, KeyboardHandler } from './exercises/04-Session1-Events'
 ```
 
-### Session 3.1 - useState
+### Session 2.1 - useState
 ```tsx
-import { Counter, NameInput, TodoList, ShoppingCart } from './exercises/05-Session3-State'
+import { Counter, NameInput, TodoList, ShoppingCart } from './exercises/05-Session2-State'
 ```
 
-### Session 3.2 - useEffect
+### Session 2.2 - useEffect
 ```tsx
-import { UserProfile, Timer, SearchInput, ChatRoom } from './exercises/06-Session3-Effects'
+import { UserProfile, Timer, SearchInput, ChatRoom } from './exercises/06-Session2-Effects'
 ```
 
-### Session 3.3 - useRef
+### Session 2.3 - useRef
 ```tsx
-import { AutoFocusInput, StopwatchWithRef, VideoPlayer, ClickOutsideDemo } from './exercises/07-Session3-Refs'
+import { AutoFocusInput, StopwatchWithRef, VideoPlayer, ClickOutsideDemo } from './exercises/07-Session2-Refs'
 ```
 
 ---
@@ -74,7 +74,7 @@ import { AutoFocusInput, StopwatchWithRef, VideoPlayer, ClickOutsideDemo } from 
 
 ```tsx
 // ✅ Good - Clean and focused
-import { Counter, NameInput } from './exercises/05-Session3-State'
+import { Counter, NameInput } from './exercises/05-Session2-State'
 
 function App() {
   return (
@@ -86,9 +86,9 @@ function App() {
 }
 
 // ❌ Avoid - Mixing sessions (confusing)
-import { WelcomeCard } from './exercises/01-Session2-JSX'
-import { Counter } from './exercises/05-Session3-State'
-import { Timer } from './exercises/06-Session3-Effects'
+import { WelcomeCard } from './exercises/01-Session1-JSX'
+import { Counter } from './exercises/05-Session2-State'
+import { Timer } from './exercises/06-Session2-Effects'
 ```
 
 ### Tip 2: Test One Exercise at a Time
@@ -111,7 +111,7 @@ function App() {
 }
 ```
 
-### Tip 3: Use VS Code Split View
+### Tip 3: Use IntelliJ IDEA Split View
 
 ```
 ┌─────────────────────┬─────────────────────┐
@@ -169,7 +169,7 @@ function App() {
 **Q: Can't find exercises**
 - Files are in `src/exercises/`
 - Numbered: `01-`, `02-`, `03-`, etc.
-- Use Cmd/Ctrl+P in VS Code to quick-open
+- Use Double Shift in IntelliJ IDEA to quick-search files
 
 ---
 
@@ -178,15 +178,6 @@ function App() {
 ```bash
 # Start dev server
 npm run dev
-
-# Open file quickly (VS Code)
-Cmd/Ctrl + P → type "App.tsx"
-
-# Comment/uncomment line
-Cmd/Ctrl + /
-
-# Save file
-Cmd/Ctrl + S
 ```
 
 ---
@@ -195,7 +186,7 @@ Cmd/Ctrl + S
 
 ```tsx
 // BEFORE (Session 2.1 - JSX)
-import { WelcomeCard } from './exercises/01-Session2-JSX'
+import { WelcomeCard } from './exercises/01-Session1-JSX'
 
 function App() {
   return (
@@ -206,7 +197,7 @@ function App() {
 }
 
 // AFTER (Session 3.1 - useState)
-import { Counter, NameInput } from './exercises/05-Session3-State'
+import { Counter, NameInput } from './exercises/05-Session2-State'
 
 function App() {
   return (

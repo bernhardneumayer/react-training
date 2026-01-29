@@ -37,16 +37,16 @@ react-training/
 ├── src/
 │   ├── App.tsx                         # Live coding area with current session
 │   ├── exercises/                      # Exercise files (numbered for order)
-│   │   ├── 01-Session2-JSX.tsx         # Session 2.1: JSX fundamentals
-│   │   ├── 02-Session2-Props.tsx       # Session 2.2: Props and TypeScript
-│   │   ├── 03-Session2-Lists.tsx       # Session 2.4: Lists and keys
-│   │   ├── 04-Session2-Events.tsx      # Session 2.5: Event handling
-│   │   ├── 05-Session3-State.tsx       # Session 3.1: useState hook
-│   │   ├── 06-Session3-Effects.tsx     # Session 3.2: useEffect hook
-│   │   └── 07-Session3-Refs.tsx        # Session 3.3: useRef hook
+│   │   ├── 01-Session1-JSX.tsx         # Session 1.1: JSX fundamentals
+│   │   ├── 02-Session1-Props.tsx       # Session 1.2: Props and TypeScript
+│   │   ├── 03-Session1-Lists.tsx       # Session 1.4: Lists and keys
+│   │   ├── 04-Session1-Events.tsx      # Session 1.5: Event handling
+│   │   ├── 05-Session2-State.tsx       # Session 2.1: useState hook
+│   │   ├── 06-Session2-Effects.tsx     # Session 2.2: useEffect hook
+│   │   └── 07-Session2-Refs.tsx        # Session 2.3: useRef hook
 │   └── solutions/                      # Reference implementations
-│       ├── Session2-Props-Solutions.tsx
-│       └── Session3-State-Solutions.tsx
+│       ├── Session1-Props-Solutions.tsx
+│       └── Session2-State-Solutions.tsx
 ├── SETUP.md                            # Installation guide
 ├── WORKFLOW.md                         # How to use exercises
 ├── EXERCISE_TEMPLATE.md                # Template for new exercises
@@ -57,28 +57,29 @@ react-training/
 
 ## 📖 Training Sessions
 
-### Session 2: React Basics (Use this environment)
-- **2.1** - JSX Fundamentals
-- **2.2** - Props and TypeScript
-- **2.3** - Conditional Rendering
-- **2.4** - Lists and Keys
-- **2.5** - Event Handling
-- **2.6** - NXD Preview (switch to Cousteau Storybook)
+### Session 1: React Basics (Use this environment)
+- **1.0** - Quick intro (setup, React mental model)
+- **1.1** - JSX Fundamentals
+- **1.2** - Props and TypeScript
+- **1.3** - Conditional Rendering
+- **1.4** - Lists and Keys
+- **1.5** - Event Handling
+- **1.6** - NXD Preview (switch to Cousteau Storybook)
 
-### Session 3: Hooks (Use this environment)
-- **3.1** - useState Hook
-- **3.2** - useEffect Hook
-- **3.3** - useRef Hook
-- **3.4** - Brief mention of useMemo/useCallback
+### Session 2: Hooks (Use this environment)
+- **2.1** - useState Hook
+- **2.2** - useEffect Hook
+- **2.3** - useRef Hook
+- **2.4** - Brief mention of useMemo/useCallback
 
-### Session 4-6: Real World Patterns (Switch to Cousteau)
+### Session 3-5: Real World Patterns (Switch to Cousteau)
 - Custom hooks, API integration, testing, real tickets
 
 ## 🎯 How to Use This Repository
 
 ### For Instructors (Live Coding)
 
-1. **Before Session 2**: Open `src/App.tsx` in VS Code
+1. **Before Session 1**: Open `src/App.tsx` in IntelliJ IDEA
 2. **During Session**: Type code directly in App.tsx while screen sharing
 3. **Show Examples**: Import and render exercise components from `src/exercises/`
 4. **Reference Solutions**: Check `src/solutions/` for correct implementations
@@ -86,13 +87,13 @@ react-training/
 Example live coding setup:
 ```tsx
 // src/App.tsx
-import { Counter } from './exercises/05-Session3-State'
-import { UserCard } from './solutions/Session2-Props-Solutions'
+import { Counter } from './exercises/05-Session2-State'
+import { UserCard } from './solutions/Session1-Props-Solutions'
 
 function App() {
   return (
     <div style={{ padding: '2rem' }}>
-      <h1>📚 Session 3.1 - useState</h1>
+      <h1>📚 Session 2.1 - useState</h1>
 
       {/* Live code here */}
       <Counter />
@@ -127,7 +128,7 @@ function App() {
    - Each component has a placeholder UI showing status (🚧 Not started, ✏️ In progress, ✅ Complete)
    - Import into `App.tsx` to test:
      ```tsx
-     import { Counter } from './exercises/05-Session3-State'
+     import { Counter } from './exercises/05-Session2-State'
 
      function App() {
        return <Counter />  // See your work in browser!
@@ -190,6 +191,7 @@ npm run dev -- --port 3000
 - Make sure you're using TypeScript syntax
 - Check that types are imported from 'react'
 - Use `React.ChangeEvent<HTMLInputElement>` for event types
+- Run `npm run lint` to check for Biome errors
 
 ### Component not updating
 - Check that you're using `setState`, not mutating directly
@@ -216,22 +218,22 @@ npm run dev -- --port 3000
 
 ## 🎓 Next Steps
 
-After completing Sessions 2-3 in this environment:
+After completing Sessions 1-2 in this environment:
 
-1. **Switch to Cousteau** for Sessions 4-6
+1. **Switch to Cousteau** for Sessions 3-5
 2. **Practice with real components** using NXD design system
 3. **Write tests** using React Testing Library
 4. **Work on real tickets** to solidify learning
 
 ## 📝 Notes for Sessions
 
-### Session 2 Focus
+### Session 1 Focus
 - Understand JSX syntax and rules
 - Master props (passing data down)
 - Render lists with proper keys
 - Handle user interactions with events
 
-### Session 3 Focus
+### Session 2 Focus
 - Manage component state with useState
 - Handle side effects with useEffect
 - Access DOM elements with useRef

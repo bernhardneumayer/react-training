@@ -6,7 +6,7 @@
  */
 
 // Import the exercises you want to test
-import { BrokenComponent } from './exercises/01-Session2-JSX'
+import { BrokenComponent } from './exercises/01-Session1-JSX'
 
 // ============================================
 // 🎨 YOUR WORKSPACE
