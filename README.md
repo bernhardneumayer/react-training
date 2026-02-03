@@ -22,11 +22,19 @@ cd react-training
 # Install dependencies
 npm install
 
-# Start the development server
+# Start the development server with test runner (recommended)
+npm run dev:full
+
+# Or start just the dev server
 npm run dev
+
+# Run tests (optional - for TDD approach)
+npm test
 ```
 
 The app will be available at http://localhost:5173
+- Use `npm run dev:full` to start both the app AND the test runner server
+- This allows you to run tests from the UI with a button click!
 
 **Stuck?** Check [SETUP.md](./SETUP.md) for troubleshooting.
 
@@ -135,14 +143,110 @@ function App() {
      }
      ```
 
-3. **Check solutions**
+3. **Run tests (TDD approach - recommended)**
+   ```bash
+   npm run dev:full      # Start app + test server (recommended!)
+   npm test              # Watch mode - tests run on file changes
+   npm test -- --run     # Run once and generate results for UI
+   ```
+   - **Run tests from the UI:** Click "🧪 Test Results" tab, then:
+     - Click **"⚡ This Exercise"** for instant results (~2-3 sec)
+     - Click **"▶️ All Tests"** for full suite (~40 sec)
+   - Tests verify your implementation is correct
+   - Start with failing tests (red)
+   - Implement until tests pass (green)
+   - Each exercise has specific test cases
+   - View live test results in the app
+
+4. **Check solutions**
    - Compare with `src/solutions/` after trying yourself
    - Understand different approaches
 
-4. **Experiment freely**
+5. **Experiment freely**
    - `App.tsx` is your playground
    - Hot reload updates instantly
    - Use browser DevTools for debugging
+
+## 🧪 Testing Your Implementation (TDD Approach)
+
+This repository includes comprehensive tests for all exercises to help you verify your implementations. Tests follow the **Test-Driven Development (TDD)** approach.
+
+### How It Works
+
+1. **Tests start failing (Red)** ❌
+   - Each exercise has tests that initially fail
+   - Tests describe what the exercise should accomplish
+
+2. **Implement to make them pass (Green)** ✅
+   - Write code in the exercise files
+   - Run tests to see progress
+   - Iterate until all tests pass
+
+3. **Verify correctness**
+   - Passing tests confirm proper implementation
+   - Tests check for best practices (keys, cleanup, etc.)
+
+### Running Tests
+
+**Option 1: Run tests from the UI (Easiest!)**
+```bash
+# Start both the app and test server
+npm run dev:full
+```
+Then in the browser:
+1. Click the "🧪 Test Results" tab
+2. Click either:
+   - **"⚡ This Exercise"** (green) - Runs only current exercise tests (super fast! ~2-3 seconds)
+   - **"▶️ All Tests"** (blue) - Runs entire test suite (slow, ~40 seconds)
+3. Watch tests run and results update automatically!
+
+**Option 2: Command line**
+```bash
+# Watch mode - automatically re-runs tests on file changes
+npm test
+
+# Run all tests once
+npm test -- --run
+
+# Run specific exercise tests
+npm test Lists                    # Tests for Lists exercises
+npm test 03-Session1-Lists        # Same thing
+
+# Run with UI (visual test runner)
+npm test:ui
+```
+
+### Test Output Example
+
+```
+✓ Exercise 1: should render a list of transactions
+✓ Exercise 1: should display transaction descriptions
+× Exercise 1: should use proper keys (not index)
+```
+
+### What Tests Verify
+
+- **Lists**: Proper keys, filtering, empty states
+- **Events**: Event handlers attached, preventDefault called
+- **State**: Immutable updates, derived values
+- **Effects**: Cleanup functions, correct dependencies
+- **Refs**: DOM manipulation, no unnecessary re-renders
+
+### Test Files
+
+Each exercise file has a corresponding test file:
+```
+src/exercises/
+├── 03-Session1-Lists.tsx       # Exercise implementation
+└── 03-Session1-Lists.test.tsx  # Tests for these exercises
+```
+
+### Tips for Using Tests
+
+- **Read test descriptions** to understand requirements
+- **Run tests frequently** while implementing
+- **Don't just make tests pass** - understand why they pass
+- **Check multiple exercises** - tests cover edge cases
 
 ## 💡 Tips for Learning
 

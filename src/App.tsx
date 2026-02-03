@@ -10,10 +10,15 @@
 
 import { useState, useEffect } from 'react'
 import { ProgressTracker } from './components/ProgressTracker'
+import { TestResults } from './components/TestResults'
 import { getExerciseById, getAllExercises } from './exerciseConfig'
 import { loadProgress, saveProgress } from './utils/progressStorage'
 
+type TabView = 'exercise' | 'tests'
+
 function App() {
+  const [activeTab, setActiveTab] = useState<TabView>('exercise')
+
   // Load progress from localStorage on mount
   const [completedExercises, setCompletedExercises] = useState<Set<string>>(() => loadProgress())
   const [currentExerciseId, setCurrentExerciseId] = useState<string | null>(() => {
@@ -126,7 +131,7 @@ function App() {
         }}
       >
         {currentExercise ? (
-          <div style={{ maxWidth: '900px', width: '100%' }}>
+          <div style={{ maxWidth: '900px', minWidth: '700px', width: '100%' }}>
             {/* Exercise Header */}
             <div
               style={{
@@ -198,8 +203,80 @@ function App() {
               )}
             </div>
 
-            {/* Exercise Component */}
+            {/* Tab Navigation */}
             <div
+              style={{
+                display: 'flex',
+                gap: '0.5rem',
+                marginBottom: '1rem',
+                borderBottom: '2px solid #e0e0e0',
+              }}
+            >
+              <button
+                onClick={() => setActiveTab('exercise')}
+                style={{
+                  padding: '0.75rem 1.5rem',
+                  paddingBottom: '0.5rem',
+                  backgroundColor: 'transparent',
+                  color: activeTab === 'exercise' ? '#2196f3' : '#666',
+                  border: 'none',
+                  cursor: 'pointer',
+                  fontSize: '0.875rem',
+                  fontWeight: activeTab === 'exercise' ? 'bold' : 'normal',
+                  position: 'relative',
+                  transition: 'all 0.2s ease',
+                }}
+              >
+                📝 Exercise
+                {activeTab === 'exercise' && (
+                  <div
+                    style={{
+                      position: 'absolute',
+                      bottom: '-2px',
+                      left: '0.5rem',
+                      right: '0.5rem',
+                      height: '2px',
+                      backgroundColor: '#2196f3',
+                    }}
+                  />
+                )}
+              </button>
+              <button
+                onClick={() => setActiveTab('tests')}
+                style={{
+                  padding: '0.75rem 1.5rem',
+                  paddingBottom: '0.5rem',
+                  backgroundColor: 'transparent',
+                  color: activeTab === 'tests' ? '#2196f3' : '#666',
+                  border: 'none',
+                  cursor: 'pointer',
+                  fontSize: '0.875rem',
+                  fontWeight: activeTab === 'tests' ? 'bold' : 'normal',
+                  position: 'relative',
+                  transition: 'all 0.2s ease',
+                }}
+              >
+                🧪 Test Results
+                {activeTab === 'tests' && (
+                  <div
+                    style={{
+                      position: 'absolute',
+                      bottom: '-2px',
+                      left: '0.5rem',
+                      right: '0.5rem',
+                      height: '2px',
+                      backgroundColor: '#2196f3',
+                    }}
+                  />
+                )}
+              </button>
+            </div>
+
+            {/* Tab Content */}
+            {activeTab === 'exercise' ? (
+              <>
+                {/* Exercise Component */}
+                <div
               style={{
                 marginBottom: '2rem',
                 padding: '1.5rem',
@@ -281,6 +358,22 @@ function App() {
                 </li>
               </ul>
             </details>
+              </>
+            ) : (
+              /* Test Results Tab */
+              <div
+                style={{
+                  marginBottom: '2rem',
+                  padding: '1.5rem',
+                  backgroundColor: '#fff',
+                  border: '1px solid #e0e0e0',
+                  borderRadius: '8px',
+                  minHeight: '300px',
+                }}
+              >
+                <TestResults currentExerciseId={currentExerciseId} />
+              </div>
+            )}
           </div>
         ) : (
           <div
