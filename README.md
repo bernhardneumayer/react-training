@@ -43,7 +43,7 @@ The app will be available at http://localhost:5173
 ```
 react-training/
 ├── src/
-│   ├── App.tsx                         # Live coding area with current session
+│   ├── App.tsx                         # Interactive exercise tracker UI with sidebar
 │   ├── exercises/                      # Exercise files (numbered for order)
 │   │   ├── 01-Session1-JSX.tsx         # Session 1.1: JSX fundamentals
 │   │   ├── 02-Session1-Props.tsx       # Session 1.2: Props and TypeScript
@@ -52,9 +52,14 @@ react-training/
 │   │   ├── 05-Session2-State.tsx       # Session 2.1: useState hook
 │   │   ├── 06-Session2-Effects.tsx     # Session 2.2: useEffect hook
 │   │   └── 07-Session2-Refs.tsx        # Session 2.3: useRef hook
-│   └── solutions/                      # Reference implementations
-│       ├── Session1-Props-Solutions.tsx
-│       └── Session2-State-Solutions.tsx
+│   └── solutions/                      # Reference implementations (all 7 sessions)
+│       ├── 01-Session1-JSX-Solutions.tsx
+│       ├── 02-Session1-Props-Solutions.tsx
+│       ├── 03-Session1-Lists-Solutions.tsx
+│       ├── 04-Session1-Events-Solutions.tsx
+│       ├── 05-Session2-State-Solutions.tsx
+│       ├── 06-Session2-Effects-Solutions.tsx
+│       └── 07-Session2-Refs-Solutions.tsx
 ├── SETUP.md                            # Installation guide
 ├── WORKFLOW.md                         # How to use exercises
 ├── EXERCISE_TEMPLATE.md                # Template for new exercises
@@ -85,39 +90,32 @@ react-training/
 
 ## 🎯 How to Use This Repository
 
-### For Instructors (Live Coding)
+### Interactive Exercise Tracker UI
 
-1. **Before Session 1**: Open `src/App.tsx` in IntelliJ IDEA
-2. **During Session**: Type code directly in App.tsx while screen sharing
-3. **Show Examples**: Import and render exercise components from `src/exercises/`
-4. **Reference Solutions**: Check `src/solutions/` for correct implementations
+This project features a modern interactive UI for learning React:
 
-Example live coding setup:
-```tsx
-// src/App.tsx
-import { Counter } from './exercises/05-Session2-State'
-import { UserCard } from './solutions/Session1-Props-Solutions'
+**Key Features:**
+- **Sidebar Navigation**: Browse all 56 exercises across 7 exercise files
+- **Progress Tracking**: Exercises are automatically marked as completed when all tests pass
+- **localStorage Persistence**: Your progress is saved between sessions
+- **Two Tabs**:
+  - **Exercise Tab**: View and edit the current exercise with live preview
+  - **Test Results Tab**: Run tests and see results in real-time
+- **Test Runners**:
+  - **"⚡ This Exercise"** button: Runs only the current exercise's tests (super fast, ~2-3 seconds)
+  - **"▶️ All Tests"** button: Runs the entire test suite (slower, ~40 seconds)
 
-function App() {
-  return (
-    <div style={{ padding: '2rem' }}>
-      <h1>📚 Session 2.1 - useState</h1>
-
-      {/* Live code here */}
-      <Counter />
-
-      {/* Or show solution */}
-      <UserCard />
-    </div>
-  )
-}
-```
+**Statistics:**
+- 7 exercise files (JSX, Props, Lists, Events, State, Effects, Refs)
+- 56 total exercises
+- 239 comprehensive tests
+- All exercises have solution files in `src/solutions/`
 
 ### For Participants (Hands-on Practice)
 
 **📖 Documentation:**
-- 🚀 [QUICK_START.md](./QUICK_START.md) - Fast session switching reference
-- 📖 [WORKFLOW.md](./WORKFLOW.md) - Detailed step-by-step workflow
+- 🚀 [QUICK_START.md](./QUICK_START.md) - Get started with the interactive UI
+- 📖 [WORKFLOW.md](./WORKFLOW.md) - Detailed participant and instructor workflows
 - ⚙️  [SETUP.md](./SETUP.md) - Installation & troubleshooting
 
 **Quick workflow:**
@@ -127,45 +125,44 @@ function App() {
    git clone git@github.com:bernhardneumayer/react-training.git
    cd react-training
    npm install
-   npm run dev
+   npm run dev:full      # Starts app + test server (required for UI test buttons)
    ```
 
-2. **Work on exercises** (Recommended approach)
-   - Edit exercise files in `src/exercises/` (numbered `01-`, `02-`, etc.)
-   - Find `TODO` comments and implement
-   - Each component has a placeholder UI showing status (🚧 Not started, ✏️ In progress, ✅ Complete)
-   - Import into `App.tsx` to test:
-     ```tsx
-     import { Counter } from './exercises/05-Session2-State'
+2. **Use the Interactive UI**
+   - Navigate through exercises using the left sidebar
+   - Click on any exercise to view it
+   - Edit exercise files in `src/exercises/` in your code editor
+   - Watch live updates in the browser
+   - Click "🧪 Test Results" tab to run tests
+   - Use "⚡ This Exercise" for quick feedback on your current work
+   - Track your progress automatically as tests pass
 
-     function App() {
-       return <Counter />  // See your work in browser!
-     }
-     ```
+3. **Work on exercises**
+   - Open exercise files in your code editor (IntelliJ IDEA, VS Code, etc.)
+   - Find `TODO` comments and implement the exercises
+   - Save files to see live updates in the browser
+   - Run tests to verify your implementation
+   - Check solutions in `src/solutions/` after attempting yourself
 
-3. **Run tests (TDD approach - recommended)**
-   ```bash
-   npm run dev:full      # Start app + test server (recommended!)
-   npm test              # Watch mode - tests run on file changes
-   npm test -- --run     # Run once and generate results for UI
-   ```
-   - **Run tests from the UI:** Click "🧪 Test Results" tab, then:
-     - Click **"⚡ This Exercise"** for instant results (~2-3 sec)
-     - Click **"▶️ All Tests"** for full suite (~40 sec)
-   - Tests verify your implementation is correct
-   - Start with failing tests (red)
-   - Implement until tests pass (green)
-   - Each exercise has specific test cases
-   - View live test results in the app
+4. **Run tests**
+   - **From UI** (recommended): Use the "⚡ This Exercise" or "▶️ All Tests" buttons in the Test Results tab
+   - **From command line**: `npm test` (watch mode) or `npm test -- --run` (single run)
 
-4. **Check solutions**
-   - Compare with `src/solutions/` after trying yourself
-   - Understand different approaches
+### For Instructors (Live Coding)
 
-5. **Experiment freely**
-   - `App.tsx` is your playground
-   - Hot reload updates instantly
-   - Use browser DevTools for debugging
+**📖 See [WORKFLOW.md](./WORKFLOW.md) for detailed instructor workflow**
+
+**Quick approach:**
+
+1. **Use your own coding environment** (e.g., create a separate CodeSandbox or local project)
+2. **Live code** while explaining concepts
+3. **Reference this repository** for:
+   - Exercise ideas and progression
+   - Solution implementations
+   - Test cases to guide discussions
+4. **Participants use the interactive UI** to practice independently
+
+The interactive UI is designed for self-paced learning, while instructors can demonstrate concepts using any preferred setup.
 
 ## 🧪 Testing Your Implementation (TDD Approach)
 

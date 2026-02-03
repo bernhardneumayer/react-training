@@ -12,6 +12,33 @@
 - [ ] Set up dual screen: IntelliJ IDEA on left, Browser on right
 - [ ] Have Cousteau Storybook URL ready for Session 1.6
 
+## Understanding the Interactive UI
+
+**Important for instructors**: This training environment now features an interactive UI that participants will use to navigate through exercises.
+
+### Interactive Features
+
+**Sidebar Navigation:**
+- Participants use the sidebar to browse and select exercises
+- No need to manually import/uncomment exercises in code
+- Click an exercise to view it in the main panel
+
+**Progress Tracking:**
+- Completion status is tracked automatically via localStorage
+- Green checkmarks show completed exercises
+- Progress persists across browser sessions
+
+**Built-in Test Runner:**
+- Each exercise has an interactive "Run Tests" button
+- Instant feedback on solutions without leaving the UI
+- Test results display inline
+
+**When to Use App.tsx vs Separate Files:**
+- **Use App.tsx for**: Live coding demonstrations, explaining new concepts
+- **Use separate files for**: Creating custom examples, instructor-only demos
+- **Participants will**: Use the sidebar to navigate, not edit App.tsx
+- **During live coding**: You can still use App.tsx to demonstrate concepts, but remind participants they'll navigate via the UI for exercises
+
 ### IntelliJ IDEA Settings for Live Coding
 
 **Recommended settings for screen sharing:**
@@ -49,6 +76,8 @@ function App() {
 - Trying to use `if` statements instead of ternary
 
 **Exercise to assign:** `src/exercises/01-Session1-JSX.tsx`
+
+**Note:** Participants will navigate to this exercise using the sidebar. Simply tell them "Go to Session 1 > JSX Fundamentals in the sidebar"
 
 ---
 
@@ -97,6 +126,8 @@ function App() {
 - Functions can be passed as props
 
 **Exercise to assign:** `src/exercises/02-Session1-Props.tsx`
+
+**Note:** Participants select this from the sidebar under Session 1 > Props and TypeScript
 
 ---
 
@@ -167,6 +198,8 @@ function App() {
 
 **Exercise to assign:** `src/exercises/03-Session1-Lists.tsx`
 
+**Note:** Participants select this from the sidebar under Session 1 > Lists and Keys
+
 ---
 
 ### Session 1.5 - Event Handling (10 min)
@@ -201,6 +234,8 @@ function App() {
 ```
 
 **Exercise to assign:** `src/exercises/04-Session1-Events.tsx`
+
+**Note:** Participants select this from the sidebar under Session 1 > Event Handling
 
 ---
 
@@ -265,6 +300,8 @@ function NameInput() {
 
 **Exercise to assign:** `src/exercises/05-Session2-State.tsx`
 
+**Note:** Participants select this from the sidebar under Session 2 > useState Hook
+
 ---
 
 ### Session 2.2 - useEffect (30 min)
@@ -309,6 +346,8 @@ useEffect(() => {
 - Forgetting cleanup for subscriptions
 
 **Exercise to assign:** `src/exercises/06-Session2-Effects.tsx`
+
+**Note:** Participants select this from the sidebar under Session 2 > useEffect Hook
 
 ---
 
@@ -360,6 +399,8 @@ function Timer() {
 - Use for DOM access and mutable values
 
 **Exercise to assign:** `src/exercises/07-Session2-Refs.tsx`
+
+**Note:** Participants select this from the sidebar under Session 2 > useRef Hook
 
 ---
 

@@ -132,8 +132,13 @@ Quick reference for all exercises organized by topic and difficulty.
 ## Solutions
 
 All solutions are in `src/solutions/`:
-- `Session2-Props-Solutions.tsx` - Reference implementations for props exercises
-- `Session3-State-Solutions.tsx` - Reference implementations for state exercises
+- `01-Session1-JSX-Solutions.tsx` - Reference implementations for JSX exercises
+- `02-Session1-Props-Solutions.tsx` - Reference implementations for props exercises
+- `03-Session1-Lists-Solutions.tsx` - Reference implementations for lists exercises
+- `04-Session1-Events-Solutions.tsx` - Reference implementations for events exercises
+- `05-Session2-State-Solutions.tsx` - Reference implementations for state exercises
+- `06-Session2-Effects-Solutions.tsx` - Reference implementations for effects exercises
+- `07-Session2-Refs-Solutions.tsx` - Reference implementations for refs exercises
 
 **Important**: Try exercises yourself first! Solutions are for:
 - Checking your answer

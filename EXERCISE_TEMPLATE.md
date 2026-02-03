@@ -101,22 +101,9 @@ export function FixErrors() {
 }
 ```
 
-## App.tsx Usage
+## Using Exercises
 
-Simply import and render the exercise you're working on:
-
-```tsx
-import { Exercise2 } from './exercises/01-Session2-JSX'
-
-function App() {
-  return (
-    <div style={{ padding: '2rem', maxWidth: '800px', margin: '0 auto' }}>
-      <h1>📚 React Training</h1>
-      <Exercise2 />
-    </div>
-  )
-}
-```
+Exercises are automatically loaded by the interactive UI. Simply work on the exercise file directly - the application will detect and display your changes in real-time.
 
 ## Benefits
 
