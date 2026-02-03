@@ -48,14 +48,64 @@ export function NameInput() {
   )
 }
 
-// SOLUTION 3: Form with object state
-interface FormData {
+// SOLUTION 3: Multiple state variables
+interface User {
   firstName: string
   lastName: string
   email: string
 }
 
 export function UserForm() {
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
+  const [email, setEmail] = useState('')
+
+  return (
+    <div style={{ padding: '20px' }}>
+      <h2>User Form (Multiple States)</h2>
+      <div style={{ marginBottom: '10px' }}>
+        <input
+          placeholder="First Name"
+          value={firstName}
+          onChange={(e) => setFirstName(e.target.value)}
+          style={{ padding: '8px', width: '100%' }}
+        />
+      </div>
+      <div style={{ marginBottom: '10px' }}>
+        <input
+          placeholder="Last Name"
+          value={lastName}
+          onChange={(e) => setLastName(e.target.value)}
+          style={{ padding: '8px', width: '100%' }}
+        />
+      </div>
+      <div style={{ marginBottom: '10px' }}>
+        <input
+          placeholder="Email"
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          style={{ padding: '8px', width: '100%' }}
+        />
+      </div>
+
+      <div style={{ marginTop: '20px', padding: '15px', background: '#f8f9fa', borderRadius: '4px' }}>
+        <h3>Preview:</h3>
+        <p>Name: {firstName} {lastName}</p>
+        <p>Email: {email}</p>
+      </div>
+    </div>
+  )
+}
+
+// SOLUTION 4: Object state (better approach for forms)
+interface FormData {
+  firstName: string
+  lastName: string
+  email: string
+}
+
+export function BetterUserForm() {
   const [form, setForm] = useState<FormData>({
     firstName: '',
     lastName: '',
@@ -109,7 +159,7 @@ export function UserForm() {
   )
 }
 
-// SOLUTION 4: Todo list with array state
+// SOLUTION 5: Array state - Todo list
 export function TodoList() {
   const [todos, setTodos] = useState<string[]>([])
   const [input, setInput] = useState('')
@@ -186,7 +236,171 @@ export function TodoList() {
   )
 }
 
-// SOLUTION 5: Shopping cart
+// SOLUTION 6: Toggle state
+export function ToggleVisibility() {
+  const [isVisible, setIsVisible] = useState(true)
+
+  return (
+    <div style={{ padding: '20px' }}>
+      <h2>Toggle Visibility</h2>
+      <button
+        onClick={() => setIsVisible(!isVisible)}
+        style={{ padding: '8px 16px', marginBottom: '16px' }}
+      >
+        {isVisible ? 'Hide' : 'Show'}
+      </button>
+
+      {isVisible && (
+        <p style={{ padding: '16px', background: '#f8f9fa', borderRadius: '4px' }}>
+          This content can be toggled!
+        </p>
+      )}
+    </div>
+  )
+}
+
+// SOLUTION 7: Functional state updates
+export function FastCounter() {
+  const [count, setCount] = useState(0)
+
+  // ❌ BAD: May cause bugs with rapid clicks
+  const handleBadIncrement = () => {
+    setCount(count + 1)
+  }
+
+  // ✅ GOOD: Always uses latest state
+  const handleGoodIncrement = () => {
+    setCount((prevCount) => prevCount + 1)
+  }
+
+  const handleMultipleClicks = () => {
+    // This will only increment by 1 because count is stale
+    handleBadIncrement()
+    handleBadIncrement()
+    handleBadIncrement()
+  }
+
+  const handleGoodMultipleClicks = () => {
+    // This will increment by 3 correctly
+    handleGoodIncrement()
+    handleGoodIncrement()
+    handleGoodIncrement()
+  }
+
+  return (
+    <div style={{ padding: '20px' }}>
+      <h2>Functional Updates</h2>
+      <p style={{ fontSize: '24px', fontWeight: 'bold' }}>Count: {count}</p>
+      <button onClick={handleMultipleClicks} style={{ margin: '4px', padding: '8px' }}>
+        Bad: +3
+      </button>
+      <button onClick={handleGoodMultipleClicks} style={{ margin: '4px', padding: '8px' }}>
+        Good: +3
+      </button>
+      <button onClick={() => setCount(0)} style={{ margin: '4px', padding: '8px' }}>
+        Reset
+      </button>
+    </div>
+  )
+}
+
+// SOLUTION 8: Nested object state
+interface User {
+  name: string
+  email: string
+  preferences: {
+    theme: 'light' | 'dark'
+    notifications: boolean
+  }
+}
+
+export function UserSettings() {
+  const [user, setUser] = useState<User>({
+    name: 'John Doe',
+    email: 'john@example.com',
+    preferences: {
+      theme: 'light',
+      notifications: true,
+    },
+  })
+
+  const handleThemeChange = () => {
+    setUser({
+      ...user,
+      preferences: {
+        ...user.preferences,
+        theme: user.preferences.theme === 'light' ? 'dark' : 'light',
+      },
+    })
+  }
+
+  const handleToggleNotifications = () => {
+    setUser({
+      ...user,
+      preferences: {
+        ...user.preferences,
+        notifications: !user.preferences.notifications,
+      },
+    })
+  }
+
+  return (
+    <div style={{ padding: '20px' }}>
+      <h2>User Settings</h2>
+      <div style={{ marginBottom: '16px', padding: '16px', background: '#f8f9fa', borderRadius: '4px' }}>
+        <p><strong>Name:</strong> {user.name}</p>
+        <p><strong>Email:</strong> {user.email}</p>
+        <p><strong>Theme:</strong> {user.preferences.theme}</p>
+        <p><strong>Notifications:</strong> {user.preferences.notifications ? 'On' : 'Off'}</p>
+      </div>
+
+      <button onClick={handleThemeChange} style={{ margin: '4px', padding: '8px' }}>
+        Toggle Theme
+      </button>
+      <button onClick={handleToggleNotifications} style={{ margin: '4px', padding: '8px' }}>
+        Toggle Notifications
+      </button>
+    </div>
+  )
+}
+
+// SOLUTION 9: Lazy initialization
+export function ExpensiveInitialization() {
+  // ❌ BAD: This runs on EVERY render
+  // const [data, setData] = useState(expensiveCalculation())
+
+  // ✅ GOOD: This only runs ONCE on mount
+  const [betterData, setBetterData] = useState(() => expensiveCalculation())
+
+  const [renderCount, setRenderCount] = useState(0)
+
+  return (
+    <div style={{ padding: '20px' }}>
+      <h2>Lazy Initialization</h2>
+      <p>Check the console to see the difference!</p>
+      <p>Initial value: {betterData}</p>
+      <p>Render count: {renderCount}</p>
+      <button
+        onClick={() => setRenderCount(renderCount + 1)}
+        style={{ padding: '8px 16px' }}
+      >
+        Force Re-render (data won't recalculate)
+      </button>
+    </div>
+  )
+}
+
+function expensiveCalculation() {
+  console.log('Running expensive calculation...')
+  // Simulate expensive work
+  let result = 0
+  for (let i = 0; i < 1000000; i++) {
+    result += i
+  }
+  return result
+}
+
+// SOLUTION 10: Shopping cart
 interface CartItem {
   id: string
   name: string
