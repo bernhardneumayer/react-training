@@ -13,6 +13,7 @@
 
 interface ButtonProps {
   // TODO: Define the prop types here
+  // Hint: You need a string, a function, and an optional union type
 }
 
 export function Button(/* TODO: Add props */) {
@@ -46,6 +47,7 @@ interface User {
 
 interface UserCardProps {
   // TODO: Add props for user and onSelect callback
+  // Hint: One prop is the User type, the other is a callback that receives an id
 }
 
 export function UserCard(/* TODO: Destructure props here */) {

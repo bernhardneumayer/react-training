@@ -56,17 +56,14 @@ export function UserProfile({ userId }: { userId: number }) {
 
   useEffect(() => {
     // TODO: Implement data fetching
-    // 1. Set isLoading to true
-    // 2. Fetch user from API: https://jsonplaceholder.typicode.com/users/${userId}
-    // 3. Set user data
-    // 4. Handle errors
-    // 5. Set isLoading to false in finally block
+    // API endpoint: https://jsonplaceholder.typicode.com/users/${userId}
+    // Think about: loading states, error handling, and async/await pattern
+    // Important: Check the isCancelled flag before updating state - why is this needed?
 
-    // Cleanup: Cancel fetch if userId changes mid-request
     let isCancelled = false
 
     const fetchUser = async () => {
-      // TODO: Implement fetch logic
+      // TODO: Implement fetch logic with try/catch/finally
     }
 
     fetchUser()
@@ -249,11 +246,13 @@ export function DependencyArrayDemo() {
   }, [count]) // Should be [count, multiplier]
 
   // ❌ WRONG: Object in dependencies (causes infinite loop)
-  const config = { apiUrl: '/api' } // New object every render!
-  useEffect(() => {
-    console.log('Fetching with config:', config)
-    // This will run forever because config !== config
-  }, [config])
+  // ⚠️  WARNING: The code below is commented out because it causes an INFINITE LOOP!
+  // Uncommenting this will freeze your browser tab.
+  // const config = { apiUrl: '/api' } // New object every render!
+  // useEffect(() => {
+  //   console.log('Fetching with config:', config)
+  //   // This will run forever because config !== config (new object reference each render)
+  // }, [config])
 
   // ✅ CORRECT: Use primitives or useMemo
   const apiUrl = '/api'

@@ -315,18 +315,21 @@ export function ShoppingCart() {
   const [items, setItems] = useState<CartItem[]>([])
 
   const addItem = (name: string, price: number) => {
-    // TODO: Check if item already exists
-    // If yes, increment quantity
-    // If no, add new item with quantity 1
+    // TODO: Check if item already exists in the cart
+    // How would you handle these two cases differently?
+    // - Item exists: What should happen to its quantity?
+    // - Item doesn't exist: How do you create a new item with a unique id?
   }
 
   const removeItem = (id: string) => {
     // TODO: Remove item from cart
+    // Hint: Which array method creates a new array excluding certain elements?
   }
 
   const updateQuantity = (id: string, quantity: number) => {
     // TODO: Update item quantity
-    // If quantity is 0, remove the item
+    // What should happen when quantity reaches 0?
+    // How do you update just one property of an item while keeping others unchanged?
   }
 
   const total = items.reduce((sum, item) => sum + item.price * item.quantity, 0)
